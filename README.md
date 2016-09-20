@@ -36,5 +36,23 @@ pip install --ignore-installed --upgrade $TF_BINARY_URL
 ```
 
 ## install cuda and cudnn
+10. First download the cuda run file from NVIDIA
 ```
 bash cuda_7.5.18_linux.run
+# Select "yes" for create symbolic link
+```
+11. download the cudnn library
+12. execute
+```
+tar xvzf cudnn-7.5-linux-x64-v5.1.tgz
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+```
+
+## Test TensorFlow
+13. Use the following command to find where tensorflow is installed:
+`python -c 'import os; import inspect; import tensorflow; print(os.path.dirname(inspect.getfile(tensorflow)))'`
+14. go to the directory where tensorflow is located, then `cd` into `models/image/mnist`, then use python to run `convolutional.py`
+
+15. 
