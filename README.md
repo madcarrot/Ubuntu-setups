@@ -22,3 +22,19 @@ sudo apt-get update
 sudo apt-get install nvidia-361
 sudo reboot
 ```
+
+## install tensorflow
+8. install Anaconda
+9. execute
+```
+conda create -n tensorflow python=3.5
+source activate tensorflow
+# Ubuntu/Linux 64-bit, GPU enabled, Python 3.5
+# Requires CUDA toolkit 7.5 and CuDNN v5. For other versions, see "Install from sources" below.
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.10.0-cp35-cp35m-linux_x86_64.whl
+pip install --ignore-installed --upgrade $TF_BINARY_URL
+```
+
+## install cuda and cudnn
+```
+bash cuda_7.5.18_linux.run
